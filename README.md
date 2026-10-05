@@ -1,58 +1,61 @@
 # BeautyFlow AI
 
-BeautyFlow is a multilingual prototype for handling beauty-studio enquiries. A language model extracts what the customer is asking for; Python applies business rules and routes sensitive or unsupported requests to a person.
+BeautyFlow ist ein mehrsprachiger Prototyp für Anfragen und Terminabläufe in fiktiven Beauty-Studios. Ein Sprachmodell strukturiert Kundenanfragen; Python wendet Geschäftsregeln an und leitet sensible oder nicht abgedeckte Fälle an Menschen weiter.
 
-> The model interprets. The workflow decides. People handle exceptions.
+> Das Modell interpretiert. Der Workflow entscheidet. Menschen kümmern sich um Ausnahmen.
 
-All studio details and business data in this repository are synthetic. This is a learning project, not a live booking service.
+Alle Studioangaben und Geschäftsdaten in diesem Repository sind erfunden. Das Projekt dient zum Lernen und ist kein echter Buchungsdienst.
 
-## How it works
+## Funktionsweise
 
 ```text
-customer message -> Gemini extraction -> validation -> Python date and safety rules
-                                                       -> grounded reply or human review
+Kundennachricht -> Gemini-Extraktion -> Validierung -> Python-Datums- und Sicherheitsregeln
+                                                          -> fundierte Antwort oder menschliche Prüfung
 ```
 
-- Understands messages in Spanish, English and German.
-- Uses deterministic Python rules for date resolution and routing.
-- Grounds replies in `knowledge_base.json`; it does not invent missing prices or confirm appointments.
-- Escalates health-related questions, complaints and unsupported cases for human review.
-- Includes offline workflow checks in `test_workflow.py`.
+- Verarbeitet Nachrichten auf Deutsch, Englisch und Spanisch.
+- Nutzt nachvollziehbare Python-Regeln zur Datumsauflösung und Weiterleitung.
+- Bezieht Antworten aus `knowledge_base.json`; fehlende Preise werden nicht erfunden und Termine nicht automatisch bestätigt.
+- Leitet Gesundheitsfragen, Beschwerden und nicht unterstützte Fälle zur Prüfung an einen Menschen weiter.
+- Enthält Offline-Prüfungen für den Workflow in `test_workflow.py`.
 
-## Run locally
+## Lokal starten
 
-Install Python 3.10 or newer, then install the dependencies:
+Python 3.10 oder neuer installieren und die Abhängigkeiten einrichten:
 
 ```text
 python -m pip install google-genai python-dotenv
 ```
 
-Create a local `.env` file in this folder with your own Gemini API key:
+Eine lokale `.env`-Datei in diesem Ordner mit deinem Gemini-API-Schlüssel anlegen:
 
 ```text
 GEMINI_API_KEY=your_key_here
 ```
 
-Keep `.env` private. It is excluded from Git by `.gitignore`; never paste the key into this repository, the website, or a public chat.
+Die `.env`-Datei privat halten. Sie wird durch `.gitignore` von Git ausgeschlossen. Den Schlüssel niemals in dieses Repository, die Website oder einen öffentlichen Chat kopieren.
 
-Run the offline checks (no API call required):
+Offline-Prüfungen ausführen (ohne API-Aufruf):
 
 ```text
 python test_workflow.py
 ```
 
-Run a sample message (uses the Gemini API):
+Eine Beispielnachricht ausführen (verwendet die Gemini-API):
 
 ```text
 python beautyflow.py "Hi, I want to book a classic facial this Friday evening."
 ```
 
-## Portfolio page
+## Portfolio-Website
 
-The static project page is `index.html` at the repository root. It contains a local, illustrative demo that makes no API calls. It can be published with GitHub Pages by selecting the `main` branch and the root folder as the Pages source in the repository settings.
+`index.html` im Stammverzeichnis enthält eine interaktive deutsche Buchungsdemo mit vier Beispielstudios, Behandlungen, Preisen, freien und belegten Zeitfenstern, einer lokalen Bestätigungsvorschau und einer beispielhaften Preisberatung.
 
-## Current limits
+## Grenzen des Prototyps
 
-- The calendar, CRM and customer-facing booking interface are not connected.
-- A `check_calendar` action is a routing result; it does not check or reserve a real appointment.
-- The sample business and its service information are fictional.
+- Studios, Preise, Adressen und Kalender sind fiktive Beispieldaten.
+- Die Buchungsbestätigung wird nur im Browser angezeigt; es wird keine E-Mail gesendet und kein Termin gespeichert.
+- Die Chat-Antworten und Foto-Einschätzungen sind illustrative Demos. Die Fotos werden nicht hochgeladen und nicht von einer KI analysiert.
+- Es gibt keine Verbindung zu echten Studio-Kalendern, CRM-Systemen oder E-Mail-Diensten.
+- Für einen echten Dienst müssten Studios ihre Daten pflegen und Kalender, E-Mail sowie eine sichere KI-Schnittstelle angebunden werden.
+
