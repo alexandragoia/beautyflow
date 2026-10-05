@@ -49,7 +49,7 @@ python beautyflow.py "Hi, I want to book a classic facial this Friday evening."
 
 ## Portfolio-Website
 
-`index.html` im Stammverzeichnis enthält eine deutschsprachige, responsive Buchungsdemo mit conversational Suche, fünf Beispielstudios, Preis- und Terminvergleich, Favoriten, Studio-Profilbeispielen, markierten fiktiven Bewertungen, einer Demo-Warteliste sowie Treuepunkten und 10-%-/5-%-Beispielrabatten. Haarlänge sowie Nagellänge und Material verändern die unverbindlichen Preisrichtwerte. Die Demo-Konto-Vorteile lassen sich im Browser ausprobieren.
+`index.html` im Stammverzeichnis enthält eine deutschsprachige, responsive Buchungsdemo mit einem zentralen Gesprächs- und Suchfeld, sechs Beispielstudios (darunter zwei Friseursalons), Preis- und Terminvergleich, Favoriten, Profilbeispielen, markierten fiktiven Bewertungen, einer Demo-Warteliste sowie Treuepunkten und 10-%-/5-%-Beispielrabatten. Die Suchhilfe verwendet lokale Beispiele, keine verbundene KI. Eine separate Inspirationsfunktion zeigt den Fotoablauf; sie lädt Bilder nicht hoch und analysiert sie nicht.
 
 ## Grenzen des Prototyps
 
