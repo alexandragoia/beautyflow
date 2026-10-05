@@ -49,13 +49,15 @@ python beautyflow.py "Hi, I want to book a classic facial this Friday evening."
 
 ## Portfolio-Website
 
-`index.html` im Stammverzeichnis enthält eine interaktive deutsche Buchungsdemo mit einer PLZ-, Wunsch-, Datums- und Budgetsuche, fünf Beispielstudios, Preisvergleich, freien und belegten Zeitfenstern und einer lokalen Bestätigungsvorschau. Haarlänge sowie Nagellänge und Material verändern die unverbindlichen Preisrichtwerte in der Demo.
+`index.html` im Stammverzeichnis enthält eine deutschsprachige, responsive Buchungsdemo mit conversational Suche, fünf Beispielstudios, Preis- und Terminvergleich, Favoriten, Studio-Profilbeispielen, markierten fiktiven Bewertungen, einer Demo-Warteliste sowie Treuepunkten und 10-%-/5-%-Beispielrabatten. Haarlänge sowie Nagellänge und Material verändern die unverbindlichen Preisrichtwerte. Die Demo-Konto-Vorteile lassen sich im Browser ausprobieren.
 
 ## Grenzen des Prototyps
 
 - Studios, Preise, Adressen und Kalender sind fiktive Beispieldaten.
 - Die Buchungsbestätigung wird nur im Browser angezeigt; es wird keine E-Mail gesendet und kein Termin gespeichert.
 - Die Chat-Antworten und Foto-Einschätzungen sind illustrative Demos. Die Fotos werden nicht hochgeladen und nicht von einer KI analysiert.
+- Demo-Punkte, Favoriten und Rabatte werden nicht dauerhaft gespeichert. Es gibt keine echte Kontoerstellung oder Verifizierung.
+- Bewertungen, Verfügbarkeiten und Warteliste sind fiktive Beispiele und können keine echte Meinung oder Buchungsanfrage auslösen.
 - Es gibt keine Verbindung zu echten Studio-Kalendern, CRM-Systemen oder E-Mail-Diensten.
 - Für einen echten Dienst müssten Studios ihre Daten pflegen und Kalender, E-Mail sowie eine sichere KI-Schnittstelle angebunden werden.
 
