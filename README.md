@@ -49,7 +49,7 @@ python beautyflow.py "Hi, I want to book a classic facial this Friday evening."
 
 ## Portfolio-Website
 
-`index.html` im Stammverzeichnis enthält eine interaktive deutsche Buchungsdemo mit vier Beispielstudios, Behandlungen, Preisen, freien und belegten Zeitfenstern, einer lokalen Bestätigungsvorschau und einer beispielhaften Preisberatung.
+`index.html` im Stammverzeichnis enthält eine interaktive deutsche Buchungsdemo mit einer PLZ-, Wunsch-, Datums- und Budgetsuche, fünf Beispielstudios, Preisvergleich, freien und belegten Zeitfenstern und einer lokalen Bestätigungsvorschau. Haarlänge sowie Nagellänge und Material verändern die unverbindlichen Preisrichtwerte in der Demo.
 
 ## Grenzen des Prototyps
 
