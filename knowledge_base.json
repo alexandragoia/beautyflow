@@ -1,0 +1,205 @@
+{
+  "version": "1.0",
+  "data_status": "All business data is synthetic and created for this prototype.",
+  "business": {
+    "name": "LUMÉ Beauty Studio",
+    "type": "Beauty, Hair & Wellness Studio",
+    "location": "Dortmund, Germany"
+  },
+  "opening_hours": {
+    "monday": "09:00-18:00",
+    "tuesday": "09:00-18:00",
+    "wednesday": "09:00-20:00",
+    "thursday": "09:00-20:00",
+    "friday": "09:00-20:00",
+    "saturday": "09:00-16:00",
+    "sunday": "closed"
+  },
+  "cancellation_policy": "Customers can cancel free of charge up to 24 hours before their appointment.",
+  "services": {
+    "haircut": {
+      "name": "Haircut",
+      "category": "Hair",
+      "offered": true
+    },
+    "hair_coloring": {
+      "name": "Hair Coloring",
+      "category": "Hair",
+      "offered": true
+    },
+    "highlights": {
+      "name": "Highlights",
+      "category": "Hair",
+      "offered": true
+    },
+    "balayage": {
+      "name": "Balayage",
+      "category": "Hair",
+      "offered": true
+    },
+    "styling": {
+      "name": "Styling",
+      "category": "Hair",
+      "offered": true
+    },
+    "keratin_treatment": {
+      "name": "Keratin Treatment",
+      "category": "Hair",
+      "offered": true
+    },
+    "botox_treatment": {
+      "name": "Botox Treatment",
+      "category": "Hair",
+      "offered": true
+    },
+    "brow_shaping": {
+      "name": "Brow Shaping",
+      "category": "Brows & Lashes",
+      "offered": true,
+      "price_eur": 25,
+      "duration_min": 30
+    },
+    "brow_tint": {
+      "name": "Brow Tint",
+      "category": "Brows & Lashes",
+      "offered": true
+    },
+    "brow_lamination": {
+      "name": "Brow Lamination",
+      "category": "Brows & Lashes",
+      "offered": true,
+      "price_eur": 55,
+      "duration_min": 60
+    },
+    "lash_lift": {
+      "name": "Lash Lift",
+      "category": "Brows & Lashes",
+      "offered": true,
+      "price_eur": 65,
+      "duration_min": 60
+    },
+    "lash_extensions": {
+      "name": "Lash Extensions",
+      "category": "Brows & Lashes",
+      "offered": true
+    },
+    "powder_brows": {
+      "name": "Powder Brows",
+      "category": "Micropigmentation",
+      "offered": true,
+      "price_eur": 280,
+      "duration_min": 150
+    },
+    "ombre_brows": {
+      "name": "Ombre Brows",
+      "category": "Micropigmentation",
+      "offered": true
+    },
+    "microblading": {
+      "name": "Microblading",
+      "category": "Micropigmentation",
+      "offered": true,
+      "price_eur": 260,
+      "duration_min": 150
+    },
+    "lip_blush": {
+      "name": "Lip Blush",
+      "category": "Micropigmentation",
+      "offered": true,
+      "price_eur": 250,
+      "duration_min": 120
+    },
+    "touch_up": {
+      "name": "Touch-Up",
+      "category": "Micropigmentation",
+      "offered": true,
+      "price_eur": 90,
+      "duration_min": 90
+    },
+    "micropigmentation_correction": {
+      "name": "Micropigmentation Correction",
+      "category": "Micropigmentation",
+      "offered": true
+    },
+    "classic_facial": {
+      "name": "Classic Facial",
+      "category": "Facial & Skincare",
+      "offered": true,
+      "price_eur": 75,
+      "duration_min": 60
+    },
+    "deep_cleansing_facial": {
+      "name": "Deep Cleansing Facial",
+      "category": "Facial & Skincare",
+      "offered": true
+    },
+    "hydrating_facial": {
+      "name": "Hydrating Facial",
+      "category": "Facial & Skincare",
+      "offered": true,
+      "price_eur": 85,
+      "duration_min": 60
+    },
+    "anti_aging_treatment": {
+      "name": "Anti Aging Treatment",
+      "category": "Facial & Skincare",
+      "offered": true
+    },
+    "chemical_peel": {
+      "name": "Chemical Peel",
+      "category": "Facial & Skincare",
+      "offered": true
+    },
+    "manicure": {
+      "name": "Manicure",
+      "category": "Nails",
+      "offered": true,
+      "price_eur": 35,
+      "duration_min": 45
+    },
+    "gel_nails": {
+      "name": "Gel Nails",
+      "category": "Nails",
+      "offered": true,
+      "price_eur": 50,
+      "duration_min": 75
+    },
+    "nail_extensions": {
+      "name": "Nail Extensions",
+      "category": "Nails",
+      "offered": true
+    },
+    "nail_art": {
+      "name": "Nail Art",
+      "category": "Nails",
+      "offered": true
+    },
+    "pedicure": {
+      "name": "Pedicure",
+      "category": "Nails",
+      "offered": true
+    },
+    "relaxation_massage": {
+      "name": "Relaxation Massage",
+      "category": "Massage & Body",
+      "offered": true,
+      "price_eur": 70,
+      "duration_min": 60
+    },
+    "deep_tissue_massage": {
+      "name": "Deep Tissue Massage",
+      "category": "Massage & Body",
+      "offered": true
+    },
+    "back_massage": {
+      "name": "Back Massage",
+      "category": "Massage & Body",
+      "offered": true
+    },
+    "body_treatment": {
+      "name": "Body Treatment",
+      "category": "Massage & Body",
+      "offered": true
+    }
+  }
+}
