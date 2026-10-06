@@ -47,10 +47,10 @@ GEMINI_API_KEY=dein_privater_schluessel
 API lokal starten:
 
 ```text
-uvicorn web_api:app --reload
+uvicorn web_api:app --reload --port 8001
 ```
 
-Für die lokale Website `api-config.js` auf `http://127.0.0.1:8000` einstellen und `index.html` über einen lokalen Webserver öffnen (zum Beispiel `python -m http.server 8000`). Keine API-URL mit `file://` öffnen.
+Für die lokale Website `api-config.js` auf `http://127.0.0.1:8001` einstellen. Dann `index.html` in einem zweiten Terminal über einen lokalen Webserver öffnen (zum Beispiel `python -m http.server 8000`). Keine API-URL mit `file://` öffnen.
 
 ## Python-Workflow als separates Lernbeispiel
 
