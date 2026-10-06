@@ -1,0 +1,289 @@
+{
+  "version": "1.0",
+  "data_status": "Fictional portfolio demo data; not real studios, prices, or availability.",
+  "city": "Berlin",
+  "studios": [
+    {
+      "id": "nails",
+      "name": "Alexandra Nails",
+      "category": "Nagelstudio",
+      "tag": "nails",
+      "postal": "10115",
+      "coords": [
+        52.532,
+        13.384
+      ],
+      "initials": "AN",
+      "art": "",
+      "rating": "★ 4,9 · Demo",
+      "location": "Berlin-Mitte · Musterstraße 12",
+      "address": "Musterstraße 12, 10115 Berlin (fiktive Demo-Adresse)",
+      "phone": "+49 30 23125 001",
+      "email": "kontakt@alexandra-nails.example",
+      "services": [
+        {
+          "id": "french",
+          "name": "French Design",
+          "price": 23,
+          "duration": 40,
+          "fixedPrice": true,
+          "detail": "French-Design; das gewählte Material und die Nagellänge bestimmen den Demo-Gesamtpreis."
+        },
+        {
+          "id": "gel",
+          "name": "Maniküre & Farblack",
+          "price": 18,
+          "duration": 35,
+          "fixedPrice": true,
+          "detail": "Maniküre, Form und Pflege; das gewählte Material und die Nagellänge bestimmen den Demo-Gesamtpreis."
+        },
+        {
+          "id": "nailart",
+          "name": "Einfache Nail Art · 2 Nägel",
+          "price": 25,
+          "duration": 45,
+          "fixedPrice": true,
+          "detail": "Kleine Akzente auf zwei Nägeln · Demo-Festpreis, Material und Nagellänge unten anpassen."
+        }
+      ]
+    },
+    {
+      "id": "rose",
+      "name": "Studio Rosé Nails",
+      "category": "Nagelstudio",
+      "tag": "nails",
+      "postal": "10405",
+      "coords": [
+        52.534,
+        13.423
+      ],
+      "initials": "R",
+      "art": "art-rose",
+      "rating": "★ 4,8 · Demo",
+      "location": "Berlin-Prenzlauer Berg · Rosenweg 4",
+      "address": "Rosenweg 4, 10405 Berlin (fiktive Demo-Adresse)",
+      "phone": "+49 30 23125 002",
+      "email": "hallo@rose-nails.example",
+      "services": [
+        {
+          "id": "french",
+          "name": "French Design · Naturnagel",
+          "price": 25,
+          "duration": 40,
+          "fixedPrice": true,
+          "detail": "French mit klassischem Nagellack · Demo-Festpreis, Material und Nagellänge unten anpassen."
+        },
+        {
+          "id": "gel",
+          "name": "Maniküre & Farblack",
+          "price": 20,
+          "duration": 35,
+          "fixedPrice": true,
+          "detail": "Feilen, Pflege und einfarbiger Lack · Demo-Festpreis, Material und Nagellänge unten anpassen."
+        },
+        {
+          "id": "nailart",
+          "name": "Einfache Nail Art · 2 Nägel",
+          "price": 28,
+          "duration": 45,
+          "fixedPrice": true,
+          "detail": "Kleine Akzente auf zwei Nägeln · Demo-Festpreis, Material und Nagellänge unten anpassen."
+        }
+      ]
+    },
+    {
+      "id": "hair",
+      "name": "Atelier Haarliebe",
+      "category": "Friseurstudio",
+      "tag": "hair",
+      "postal": "10405",
+      "coords": [
+        52.534,
+        13.423
+      ],
+      "initials": "AH",
+      "art": "art-hair",
+      "rating": "★ 4,8 · Demo",
+      "location": "Berlin-Prenzlauer Berg · Lindenweg 8",
+      "address": "Lindenweg 8, 10405 Berlin (fiktive Demo-Adresse)",
+      "phone": "+49 30 23125 003",
+      "email": "kontakt@atelier-haarliebe.example",
+      "services": [
+        {
+          "id": "cut",
+          "name": "Schnitt, Waschen & Styling",
+          "price": 58,
+          "duration": 60,
+          "fixedPrice": true,
+          "detail": "Demo-Festpreis für kurzes Haar; mittlere und lange Haare erhalten einen klaren Längenzuschlag."
+        },
+        {
+          "id": "balayage",
+          "name": "Balayage & Glossing · ganzer Kopf",
+          "price": 190,
+          "duration": 180,
+          "detail": "Richtpreis inkl. Glossing und Pflege; abhängig von Haarlänge, Dichte und Ausgangsfarbe."
+        },
+        {
+          "id": "keratin",
+          "name": "Keratin-Glättung",
+          "price": 149,
+          "duration": 150,
+          "detail": "Richtpreis für kurzes Haar; genaue Arbeit hängt von Länge und Haardichte ab."
+        },
+        {
+          "id": "botox",
+          "name": "Hair Botox · Pflege",
+          "price": 129,
+          "duration": 120,
+          "detail": "Kosmetische Haarpflege, kein medizinisches Botox; Richtpreis abhängig von Haarlänge und Haardichte."
+        }
+      ]
+    },
+    {
+      "id": "hair2",
+      "name": "Studio Linden Glow",
+      "category": "Friseurstudio",
+      "tag": "hair",
+      "postal": "10999",
+      "coords": [
+        52.5,
+        13.425
+      ],
+      "initials": "LG",
+      "art": "art-hair2",
+      "rating": "★ 4,9 · Demo",
+      "location": "Berlin-Kreuzberg · Lindenstraße 18",
+      "address": "Lindenstraße 18, 10999 Berlin (fiktive Demo-Adresse)",
+      "phone": "+49 30 23125 004",
+      "email": "hallo@linden-glow.example",
+      "services": [
+        {
+          "id": "cut",
+          "name": "Schnitt, Waschen & Styling",
+          "price": 49,
+          "duration": 55,
+          "fixedPrice": true,
+          "detail": "Demo-Festpreis für kurzes Haar; mittlere und lange Haare erhalten einen klaren Längenzuschlag."
+        },
+        {
+          "id": "balayage",
+          "name": "Balayage & Glossing · ganzer Kopf",
+          "price": 180,
+          "duration": 175,
+          "detail": "Richtpreis inkl. Glossing und Pflege; abhängig von Haarlänge, Dichte und Ausgangsfarbe."
+        },
+        {
+          "id": "keratin",
+          "name": "Keratin-Glättung",
+          "price": 129,
+          "duration": 135,
+          "detail": "Richtpreis für kurzes Haar; genaue Arbeit hängt von Länge und Haardichte ab."
+        },
+        {
+          "id": "botox",
+          "name": "Hair Botox · Pflege",
+          "price": 119,
+          "duration": 120,
+          "detail": "Kosmetische Haarpflege, kein medizinisches Botox; Richtpreis abhängig von Haarlänge und Haardichte."
+        }
+      ]
+    },
+    {
+      "id": "massage",
+      "name": "Ruhepunkt Massage",
+      "category": "Massage & Wellness",
+      "tag": "massage",
+      "postal": "10997",
+      "coords": [
+        52.499,
+        13.431
+      ],
+      "initials": "RM",
+      "art": "art-massage",
+      "rating": "★ 4,9 · Demo",
+      "location": "Berlin-Kreuzberg · Grünstraße 21",
+      "address": "Grünstraße 21, 10997 Berlin (fiktive Demo-Adresse)",
+      "phone": "+49 30 23125 005",
+      "email": "kontakt@ruhepunkt.example",
+      "services": [
+        {
+          "id": "relax",
+          "name": "Entspannungsmassage",
+          "price": 65,
+          "duration": 60,
+          "fixedPrice": true,
+          "detail": "Fester Demo-Menüpreis · Ganzkörpermassage · 60 Minuten"
+        },
+        {
+          "id": "back",
+          "name": "Rücken- & Nackenmassage",
+          "price": 45,
+          "duration": 40,
+          "fixedPrice": true,
+          "detail": "Fester Demo-Menüpreis · gezielte Massage · 40 Minuten"
+        },
+        {
+          "id": "deep",
+          "name": "Deep-Tissue-Massage",
+          "price": 85,
+          "duration": 75,
+          "fixedPrice": true,
+          "detail": "Fester Demo-Menüpreis · intensive Massage · 75 Minuten"
+        }
+      ]
+    },
+    {
+      "id": "brows",
+      "name": "Belle Brows Studio",
+      "category": "Brows & Lashes",
+      "tag": "brows",
+      "postal": "10245",
+      "coords": [
+        52.51,
+        13.458
+      ],
+      "initials": "BB",
+      "art": "art-brows",
+      "rating": "★ 4,7 · Demo",
+      "location": "Berlin-Friedrichshain · Kiezallee 6",
+      "address": "Kiezallee 6, 10245 Berlin (fiktive Demo-Adresse)",
+      "phone": "+49 30 23125 006",
+      "email": "hallo@belle-brows.example",
+      "services": [
+        {
+          "id": "shape",
+          "name": "Brow Mapping, Form & Farbe",
+          "price": 32,
+          "duration": 35,
+          "fixedPrice": true,
+          "detail": "Form ausmessen, zupfen oder waxen und färben · Demo-Festpreis"
+        },
+        {
+          "id": "lamination",
+          "name": "Brow Lift inkl. Form & Farbe",
+          "price": 59,
+          "duration": 60,
+          "fixedPrice": true,
+          "detail": "Lifting, Formkorrektur, Färben und Pflege · Demo-Festpreis"
+        },
+        {
+          "id": "lash",
+          "name": "Lash Lift inkl. Färben & Pflege",
+          "price": 60,
+          "duration": 60,
+          "fixedPrice": true,
+          "detail": "Wimpernlifting mit Farbe und Pflege · Demo-Festpreis"
+        },
+        {
+          "id": "microblading",
+          "name": "Microblading inkl. Nachbehandlung",
+          "price": 350,
+          "duration": 150,
+          "fixedPrice": true,
+          "detail": "Erstbehandlung plus eine Nachbehandlung nach 4–6 Wochen · Demo-Paketpreis"
+        }
+      ]
+    }
+  ]
+}
