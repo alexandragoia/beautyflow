@@ -1,85 +1,77 @@
-# BeautyFlow AI
+# BeautyFlow
 
-BeautyFlow ist ein mehrsprachiger Lern- und Portfolio-Prototyp für die Suche nach Beauty-Studios. Die Website zeigt sechs fiktive Berliner Studios, vergleicht Demo-Angebote und enthält einen Gesprächsbereich.
+BeautyFlow ist ein Portfolio-Prototyp für die Suche nach Beauty-Studios. Die Website zeigt sechs fiktive Studios in Berlin, Beispielpreise und einen Buchungsablauf zum Ausprobieren.
 
-> Das Modell hilft beim Formulieren. Studio-Fakten kommen aus einem gemeinsamen Katalog. Buchungen bleiben in dieser Demo unverbindlich.
+**Alle Studios, Kontaktdaten, Preise, Bewertungen und freien Zeiten sind erfunden. Die Seite nimmt keine echten Buchungen an und verschickt keine E-Mails.** Das Vorhaben ist derzeit ein Kundinnen-Marktplatz. Ein Marketing- oder Social-Media-Planer für Salons gehört nicht zu diesem Prototyp.
 
-Alle Studios, Preise, Kontaktdaten, Bewertungen und Termine sind erfundene Beispieldaten. BeautyFlow ist kein echter Buchungsdienst.
+## Website und KI-Suche
 
-## Portfolio-Website
+Die Website liegt auf [GitHub Pages](https://alexandragoia.github.io/beautyflow/).
 
-Die GitHub-Pages-Seite liegt unter [alexandragoia.github.io/beautyflow](https://alexandragoia.github.io/beautyflow/).
+- `catalog.json` liefert dieselben Beispieldaten an Website und KI.
+- `index.html` zeigt Studios, filtert Angebote und führt durch eine unverbindliche Buchungsdemo.
+- Wenn die API verbunden ist, kann Gemini eine freie Nachricht wie „French Nails am Freitag, bis 50 €“ in Behandlung, Postleitzahl, Budget und Datum übersetzen. Die Website setzt erkannte Angaben in die Suche ein.
+- `web_api.py` ist das Python-Backend. Es hält den Gemini-Schlüssel geheim, begrenzt Anfragen und gibt nur kurze Antworten sowie geprüfte Suchfilter zurück.
+- `search_logic.py` verwirft ungültige oder nicht unterstützte Filter.
+- `api-config.js` enthält nur die öffentliche Adresse des API-Servers. Ein geheimer Gemini-Schlüssel gehört niemals in diese Datei.
 
-- `catalog.json` ist die gemeinsame Datenquelle für die Studio-Karten und die KI-Schnittstelle.
-- `index.html` lädt den Katalog und filtert die Demo-Studios nach Wunsch, Stadtteil, Budget und Behandlung.
-- `web_api.py` stellt eine kleine FastAPI-Schnittstelle bereit. Sie übermittelt die Nachricht an Gemini und gibt eine kurze, katalogbasierte Antwort zurück.
-- `api-config.js` enthält nur die öffentliche URL des API-Servers. Der Gemini-Schlüssel gehört dort niemals hinein.
-- Die Demo bucht keine Termine, versendet keine E-Mails und analysiert keine Fotos. Bilder bleiben im Browser.
+Ist `api-config.js` leer, arbeitet die Studiosuche mit einer einfachen lokalen Erkennung weiter. Das ist keine verbundene KI.
 
-Ist in `api-config.js` noch keine API-URL eingetragen, zeigt die Seite klar den lokalen Demo-Modus und die Suche mit Beispielstudios funktioniert weiter.
+## KI-API auf Render starten
 
-## KI-Schnittstelle bereitstellen
+GitHub Pages zeigt die Website, führt aber kein Python aus. Deshalb liegen Website und Python-API auf getrennten Diensten. Die Render-Einstellungen stehen in `render.yaml`.
 
-GitHub Pages führt kein Python aus. Die Website und das Python-Backend werden deshalb getrennt veröffentlicht. Eine Render-Konfiguration ist in `render.yaml` vorbereitet.
+1. In Render ein neues **Blueprint** aus diesem GitHub-Repository erstellen.
+2. Im Render-Dienst die geheime Umgebungsvariable `GEMINI_API_KEY` setzen. Den Schlüssel nicht in GitHub, die Website oder einen Chat eintragen.
+3. Nach dem Start sollte `https://DEIN-DIENST.onrender.com/health` den Status `ok` anzeigen.
+4. Die Dienstadresse in `api-config.js` bei `window.BEAUTYFLOW_API_URL` eintragen und die Datei speichern.
+5. Nach dem GitHub-Pages-Neustart die Website öffnen. Der Chat zeigt dann „KI-API konfiguriert“.
 
-1. In Render ein neues **Blueprint** aus diesem GitHub-Repository anlegen. Render liest `render.yaml` und installiert die Pakete aus `requirements.txt`.
-2. In den Umgebungsvariablen des Render-Dienstes `GEMINI_API_KEY` mit deinem privaten Schlüssel setzen. Den Schlüssel nie in GitHub, `api-config.js`, den Browser oder einen Chat kopieren.
-3. Nach dem Start sollte die Adresse `https://DEIN-DIENST.onrender.com/health` den Status `ok` anzeigen.
-4. Die öffentliche Basisadresse des Dienstes in `api-config.js` als `window.BEAUTYFLOW_API_URL` eintragen und die Änderung speichern. GitHub Pages aktualisiert die Website danach automatisch.
-5. Die Demo-Seite neu laden. Im Chatkopf erscheint **Gemini verbunden · Demo**. Eine Beispielanfrage sollte zusätzlich eine Antwort des API-Servers liefern.
-
-Die erlaubten Browser-Adressen sind standardmäßig die BeautyFlow-GitHub-Seite und lokale Entwicklungsadressen. Für einen anderen Veröffentlichungsort kann `CORS_ORIGINS` im Hosting angepasst werden. Die Schnittstelle begrenzt Nachrichtenlänge und Anfragehäufigkeit; sie speichert keine Chatverläufe. Der kostenlose Hosting-Tarif kann nach Ruhezeit kurz zum Aufwachen brauchen.
+Die API erlaubt standardmäßig nur Anfragen von der BeautyFlow-Seite und lokalen Entwicklungsadressen. Sie begrenzt Nachrichtenlänge und Anfragehäufigkeit und speichert keine Chatverläufe. Nachrichten werden bei verbundener API an BeautyFlow und Gemini gesendet; bitte keine persönlichen oder vertraulichen Daten eingeben. Fotos bleiben im Browser und werden nicht analysiert.
 
 ### Lokal starten
 
-Python 3.10 oder neuer installieren und Pakete einrichten:
+Python 3.10 oder neuer installieren und im Projektordner ausführen:
 
 ```text
 python -m pip install -r requirements.txt
 ```
 
-Eine lokale `.env`-Datei anlegen:
+Eine lokale Datei `.env` mit dem privaten Schlüssel anlegen:
 
 ```text
 GEMINI_API_KEY=dein_privater_schluessel
 ```
 
-API lokal starten:
+API starten:
 
 ```text
 uvicorn web_api:app --reload --port 8001
 ```
 
-Für die lokale Website `api-config.js` auf `http://127.0.0.1:8001` einstellen. Dann `index.html` in einem zweiten Terminal über einen lokalen Webserver öffnen (zum Beispiel `python -m http.server 8000`). Keine API-URL mit `file://` öffnen.
-
-## Python-Workflow als separates Lernbeispiel
-
-`beautyflow.py` zeigt einen zweiten, regelbasierten Ablauf für das fiktive LUMÉ Beauty Studio in Dortmund:
+In `api-config.js` die lokale Adresse `http://127.0.0.1:8001` eintragen. Die Website in einem zweiten Terminal starten:
 
 ```text
-Kundennachricht -> Gemini-Extraktion -> Validierung -> Python-Datums- und Sicherheitsregeln
-                                                          -> Antwort oder menschliche Prüfung
+python -m http.server 8000
 ```
 
-Er verarbeitet Deutsch, Englisch und Spanisch. Preise und Leistungen stammen für dieses Kommandozeilen-Beispiel aus `knowledge_base.json`. Das ist getrennt von den sechs Website-Beispielen und wird nicht von der Website-API verwendet.
+Dann `http://127.0.0.1:8000` öffnen. Nicht über `file://` starten.
 
-Offline-Prüfungen für diesen Workflow ausführen:
+## Separates Python-Lernbeispiel
+
+`beautyflow.py` zeigt zusätzlich einen regelbasierten Ablauf für das fiktive LUMÉ Beauty Studio in Dortmund. Dieses Kommandozeilen-Beispiel nutzt die separate Datei `knowledge_base.json`; es ist nicht das Backend der Berlin-Website.
+
+Die Offline-Prüfungen ausführen:
 
 ```text
 python test_workflow.py
+python test_search.py
 ```
 
-Beispielnachricht (verwendet Gemini):
+## Was noch nicht echt ist
 
-```text
-python beautyflow.py "Hi, I want to book a classic facial this Friday evening."
-```
-
-## Grenzen und Datenschutz der Demo
-
-- Alle Studios, Dienstleistungen, Preise, Kontaktdaten, Bewertungen und Verfügbarkeiten sind fiktiv.
-- Bei aktivierter API wird der eingegebene Nachrichtentext zur Antwort an den BeautyFlow-Server und Gemini übermittelt. Bitte keine persönlichen oder sensiblen Daten eingeben.
-- Fotos werden in dieser Version nicht hochgeladen und nicht von KI analysiert.
-- Eine Buchungsbestätigung erscheint nur im Browser. Es wird kein Termin gespeichert und keine E-Mail versandt.
-- Favoriten, Punkte, Rabatte und Bewertungen sind illustrative Frontend-Daten; es gibt keine echten Konten oder Zahlungen.
-- Es gibt keine Verbindung zu echten Studio-Kalendern, CRM-Systemen oder E-Mail-Diensten.
+- Es gibt keine echten Studios, Konten, Zahlungen oder gespeicherten Buchungen.
+- Die angezeigten Bewertungen und Rabatte sind Beispiele.
+- Es gibt keine Verbindung zu Studio-Kalendern, CRM-Systemen oder E-Mail-Diensten.
+- Fotos werden weder hochgeladen noch durch eine KI ausgewertet.
+- Eine Social-Media-Planung für Salons ist ein mögliches späteres, separates Produkt.
