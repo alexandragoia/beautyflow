@@ -13,13 +13,14 @@ Die Website liegt auf [GitHub Pages](https://alexandragoia.github.io/beautyflow/
 - Wenn die API verbunden ist, kann Gemini eine freie Nachricht wie „French Nails am Freitag, bis 50 €“ in Behandlung, Postleitzahl, Budget und Datum übersetzen. Die Website setzt erkannte Angaben in die Suche ein und wählt den gewünschten Tag im Buchungskalender vor.
 - `web_api.py` ist das Python-Backend. Es hält den Gemini-Schlüssel geheim, begrenzt Anfragen und gibt nur kurze Antworten sowie geprüfte Suchfilter zurück.
 - `search_logic.py` verwirft ungültige oder nicht unterstützte Filter.
-- `api-config.js` enthält nur die öffentliche Adresse des API-Servers. Ein geheimer Gemini-Schlüssel gehört niemals in diese Datei.
+- `api-config.js` enthält nur die optionale öffentliche Adresse des API-Servers. Ein geheimer Gemini-Schlüssel gehört niemals in diese Datei.
+- Demo-Konto, Treuepunkte, Favoriten und letzte Demo-Auswahl bleiben auf diesem Gerät im Browser. E-Mail-Adressen und Chatverläufe werden nicht gespeichert.
 
-Ist `api-config.js` leer, arbeitet die Studiosuche mit einer einfachen lokalen Erkennung weiter. Das ist keine verbundene KI.
+Ist `api-config.js` leer, läuft BeautyFlow ohne Server: Die lokale Suche erkennt einfache Angaben und beantwortet Preis-/Dauerfragen aus dem fiktiven Katalog. Das ist keine verbundene KI.
 
-## KI-API auf Render starten
+## Optionale Erweiterung mit einer KI-API
 
-GitHub Pages zeigt die Website, führt aber kein Python aus. Deshalb liegen Website und Python-API auf getrennten Diensten. Die Render-Einstellungen stehen in `render.yaml`.
+Diese Erweiterung ist für die lokale Portfolio-Demo nicht erforderlich. Sie verbindet freie Texteingaben mit Gemini. GitHub Pages führt kein Python aus; dafür wäre ein zusätzlich gehosteter API-Dienst nötig. Hosting und Gemini können je nach Anbieter und Nutzung Kosten verursachen. Die Einstellungen in `render.yaml` sind nur vorbereitet und werden nicht verwendet, solange `api-config.js` leer bleibt.
 
 1. In Render ein neues **Blueprint** aus diesem GitHub-Repository erstellen.
 2. Im Render-Dienst die geheime Umgebungsvariable `GEMINI_API_KEY` setzen. Den Schlüssel nicht in GitHub, die Website oder einen Chat eintragen.
