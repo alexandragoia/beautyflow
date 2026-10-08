@@ -10,7 +10,7 @@ Die Website liegt auf [GitHub Pages](https://alexandragoia.github.io/beautyflow/
 
 - `catalog.json` liefert dieselben Beispieldaten an Website und KI.
 - `index.html` zeigt Studios, filtert Angebote und führt durch eine unverbindliche Buchungsdemo.
-- Wenn die API verbunden ist, kann Gemini eine freie Nachricht wie „French Nails am Freitag, bis 50 €“ in Behandlung, Postleitzahl, Budget und Datum übersetzen. Die Website setzt erkannte Angaben in die Suche ein.
+- Wenn die API verbunden ist, kann Gemini eine freie Nachricht wie „French Nails am Freitag, bis 50 €“ in Behandlung, Postleitzahl, Budget und Datum übersetzen. Die Website setzt erkannte Angaben in die Suche ein und wählt den gewünschten Tag im Buchungskalender vor.
 - `web_api.py` ist das Python-Backend. Es hält den Gemini-Schlüssel geheim, begrenzt Anfragen und gibt nur kurze Antworten sowie geprüfte Suchfilter zurück.
 - `search_logic.py` verwirft ungültige oder nicht unterstützte Filter.
 - `api-config.js` enthält nur die öffentliche Adresse des API-Servers. Ein geheimer Gemini-Schlüssel gehört niemals in diese Datei.
