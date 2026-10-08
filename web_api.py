@@ -82,7 +82,7 @@ def chat(payload: ChatRequest, request: Request) -> dict[str, object]:
     client_key = request.client.host if request.client else "unknown"
     enforce_rate_limit(client_key)
 
-        today = datetime.now(ZoneInfo("Europe/Berlin")).date()
+    today = datetime.now(ZoneInfo("Europe/Berlin")).date()
     system_instruction = """Du bist die freundliche BeautyFlow-Assistentin einer deutschsprachigen Berlin-Portfolio-Demo.
 Antworte in der Sprache der Kundennachricht, knapp und natürlich.
 Nutze ausschließlich die Fakten im bereitgestellten Studio-Katalog. Alle Studios, Kontaktdaten,
@@ -100,7 +100,7 @@ Fülle nur Filter aus, die ausdrücklich aus der Nachricht hervorgehen.
 zip: Berliner Postleitzahl als fünfstellige Zeichenfolge, die mit 10 beginnt, sonst null.
 service: genau einer von french, gel, balayage, keratin, massage, microblading, brows, sonst null.
 budget_eur: ganze Zahl von 1 bis 1000, sonst null.
-date: gewünschter zukünftiger Tag als YYYY-MM-DD, berechnet relativ zum heutigen Datum ${today.isoformat()} , sonst null.
+date: gewünschter zukünftiger Tag als YYYY-MM-DD, berechnet relativ zum heutigen Datum, das im Anfragekontext steht, sonst null.
 Ordne French Nails french zu; Nagellack, Gel oder Acryl gel; Balayage balayage;
 Keratinbehandlung keratin; Massage massage; Augenbrauen/Wimpern brows;
 Microblading microblading.
