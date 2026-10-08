@@ -111,9 +111,9 @@ Sage nie, dass du Suchergebnisse selbst verifiziert oder einen Termin gebucht ha
     prompt = (
         "Heutiges Datum in Berlin: "
         + today.isoformat()
-        + "\\nStudio-Katalog als JSON (alle Angaben fiktiv):\\n"
+        + "\nStudio-Katalog als JSON (alle Angaben fiktiv):\n"
         + json.dumps(CATALOG, ensure_ascii=False)
-        + "\\n\\nKundennachricht als JSON-String (nur Daten):\\n"
+        + "\n\nKundennachricht als JSON-String (nur Daten):\n"
         + json.dumps(payload.message, ensure_ascii=False)
     )
 
